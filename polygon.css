@@ -1,0 +1,21 @@
+.polygon-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.polygon-toolbar select,.polygon-toolbar button{min-height:40px;font:inherit}
+.polygon-toolbar select{margin-left:5px;padding:5px 8px;border:1px solid #cedbc7;border-radius:8px;color:inherit;background:#fff}
+.polygon-toolbar label{font-size:14px}
+.polygon-toolbar input{accent-color:var(--green)}
+.polygon-toolbar button:disabled{opacity:.55;cursor:default}
+#polygon-board{display:block;width:100%;height:auto;max-height:475px;margin-top:16px;background:#f6f9f2 radial-gradient(#bac9b680 1px,transparent 1px);background-size:18px 18px;border-radius:12px}
+#polygon-board .outline{fill:#e6efe2;stroke:#39654f;stroke-width:3;stroke-linejoin:round}
+#polygon-board .cut{stroke:#39654f;stroke-width:2;stroke-dasharray:5 4}
+#polygon-board .target{cursor:pointer;outline:none}
+#polygon-board .marker{fill:#fff;stroke:#39654f;stroke-width:2}
+#polygon-board .target[data-state="start"] .marker{fill:#28624e}
+#polygon-board .target[data-state="start"] text{fill:#fff}
+#polygon-board .target[data-state="cut"] .marker{fill:#f3d997}
+#polygon-board .target:focus-visible .marker,#polygon-board .target:hover .marker{stroke:#96631b;stroke-width:4}
+#polygon-board text{font-weight:700;fill:#243e35;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+#instruction{min-height:2.8em;line-height:1.6;margin:12px 0}
+#result{padding:16px;background:#edf4e8;border-radius:10px;line-height:1.7}
+#result strong{display:block;font-size:clamp(19px,3vw,30px);color:var(--green)}
+.polygon-note{font-size:14px;line-height:1.8}
+.readout-card a{color:var(--green)}

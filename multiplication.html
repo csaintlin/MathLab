@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#285d48"><title>餅乾袋乘法｜小小數學所</title><meta name="description" content="每袋幾塊乘以幾袋：用餅乾袋、百格棋盤與重複加法理解1×1到10×10。"><link rel="stylesheet" href="multiplication.css"><link rel="stylesheet" href="site-shell.css">
+<script src="site-shell.js" defer></script>
+</head><body data-site-layout="lesson">
+<header class="site-header">
+  <a class="site-brand" href="multiplication.html"><span class="site-logo" aria-hidden="true">▦</span><span class="site-brand-name">餅乾袋乘法</span><span class="site-brand-sub">數學探索室</span></a>
+  <nav class="site-nav" aria-label="頁面導覽">
+    <a href="./#grade-2">數學入口</a>
+    <a href="multiplication.html" aria-current="page">動手探索</a>
+    <a href="multiplication-quiz.html">隨機練習</a>
+  </nav>
+  <button class="site-fullscreen" type="button" hidden><span aria-hidden="true">⛶</span> <span class="site-fullscreen-text">全螢幕</span></button>
+</header>
+<main><section class="intro"><div><p class="eyebrow">一袋一袋數，發現乘法的祕密</p><h1>今天，裝幾袋<span>餅乾？</span></h1><p class="subtitle">每袋一樣多，幾袋合起來就有幾個「一樣多」。</p></div><div class="intro-question"><span>✦</span><p>猜猜看：再加一袋，<br>會多幾塊餅乾？</p></div></section>
+<div class="multiplication-layout"><aside class="control-panel"><div class="section-heading"><span class="step">01</span><h2>每袋裝幾塊？</h2></div><p class="control-help">選每袋的餅乾數（被乘數）</p><div class="factor-picker" role="group" aria-label="每袋的餅乾數"><button data-factor="1" aria-pressed="false">1</button><button data-factor="2" aria-pressed="false">2</button><button data-factor="3" aria-pressed="false">3</button><button data-factor="4" aria-pressed="false">4</button><button data-factor="5" aria-pressed="true">5</button><button data-factor="6" aria-pressed="false">6</button><button data-factor="7" aria-pressed="false">7</button><button data-factor="8" aria-pressed="false">8</button><button data-factor="9" aria-pressed="false">9</button><button data-factor="10" aria-pressed="false">10</button></div>
+<div class="control-divider"></div><div class="section-heading"><span class="step">02</span><h2>要裝幾袋？</h2></div><div class="bag-counter"><strong id="bag-count">1</strong><span>袋</span></div><button class="add-button" id="add-bag">＋ 加一袋</button><button class="remove-button" id="remove-bag" disabled>− 減一袋</button><p class="limit-note" id="limit-note">最少 1 袋，最多 10 袋。</p><button class="reset-button" id="reset">↺ 重新開始</button><p class="switch-note">換每袋塊數時，從 1 袋重新觀察。</p></aside>
+<section class="bags-panel" aria-label="餅乾袋觀察區"><div class="panel-heading"><div><p class="eyebrow">裝進袋子，看見「幾個幾」</p><h2>我的餅乾袋</h2></div><span class="badge" id="bag-badge">每袋 5 塊</span></div><p class="panel-description" id="bag-description">1 袋，每袋都有 5 塊餅乾。</p><div class="bags-grid" id="bags"></div><div class="bag-total"><span>每一袋，都是一組。</span><strong id="group-sentence">5 的 1 倍就是 5</strong><p id="group-equation" class="group-equation">5 × 1 = 5</p></div></section>
+<section class="board-panel" aria-label="一百格餅乾棋盤"><div class="panel-heading"><div><p class="eyebrow">一塊一格，接著往下數</p><h2>餅乾百格棋盤</h2></div><span class="badge" id="total-badge">共 5 塊</span></div><div class="board-legend"><span><i class="normal-dot"></i>一格放一塊</span><span><i class="highlight-dot"></i>每袋的最後一塊</span></div><div class="hundred-board" id="board" role="img" aria-label="百格棋盤：第1到5格有餅乾，第5格是第一袋的終點。"></div><div class="counting-note"><span>跳著數</span><p id="skip-count">5</p></div><p class="board-hint">從左到右、從上到下填。每列 10 格，一袋可以跨列。</p></section></div>
+<section class="equation-panel" aria-label="乘法與重複加法"><div class="meaning-equation"><div><strong id="factor-value">5</strong><span>每袋塊數 · 被乘數</span></div><b>×</b><div><strong id="times-value">1</strong><span>袋數 · 乘數</span></div><b>＝</b><div class="answer"><strong id="product-value">5</strong><span>共幾塊 · 積</span></div></div><div class="addition"><span>一袋一袋加</span><p id="addition-equation">5 ＝ 5</p></div><p id="change-message" class="change-message" role="status" aria-live="polite">每袋 5 塊，1 袋共有 5 塊。</p></section>
+<details class="teacher-guide"><summary>給老師的提問小幫手</summary><p>① 先問「每袋幾塊？有幾袋？」請學生指著袋子，說出算式中每個數的意思。</p><p>② 加一袋前先預測總數。再用重複加法、袋子與棋盤驗證，每次增加的都是「一袋的塊數」。減一袋也相同。</p><p>③ 每袋 3 塊時，觀察第 4 袋如何從第 10 格接到第 12 格。一列有 10 格，一袋則有 3 塊，兩者意義不同。</p><p>④ 棋盤亮格是已放上餅乾的每袋終點。請學生讀出 3、6、9……，並說明為什麼每次多 3。</p></details></main>
+<footer class="site-footer">
+  <span>小小數學所 · 把抽象的數學，變成看得見的發現。</span>
+  <span>每袋 1～10 塊 × 1～10 袋</span>
+</footer>
+<script src="multiplication.js"></script></body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#285d48"><title>三角形探索室｜小小數學所</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="triangle.css"><link rel="stylesheet" href="site-shell.css">
+<script src="site-shell.js" defer></script>
+</head><body data-site-layout="lesson">
+<header class="site-header">
+  <a class="site-brand" href="triangle.html"><span class="site-logo" aria-hidden="true">△</span><span class="site-brand-name">三角形探索室</span><span class="site-brand-sub">數學探索室</span></a>
+  <nav class="site-nav" aria-label="頁面導覽">
+    <a href="./#grade-5">數學入口</a>
+    <a href="triangle.html" aria-current="page">探索室</a>
+    <a href="triangle-quiz.html">隨機練習</a>
+  </nav>
+  <button class="site-fullscreen" type="button" hidden><span aria-hidden="true">⛶</span> <span class="site-fullscreen-text">全螢幕</span></button>
+</header>
+<main><section class="intro"><div><p class="eyebrow">先猜一猜，再動手驗證</p><h1>三個角、三條邊，<span>藏著什麼規則？</span></h1><p class="subtitle">移動頂點找不變的規律，挑選邊條試著圍成三角形。</p></div></section>
+<div class="activity-tabs" role="tablist" aria-label="三角形活動"><button id="tab-angles" role="tab" aria-selected="true" aria-controls="panel-angles">01　移動頂點看內角</button><button id="tab-sides" role="tab" aria-selected="false" aria-controls="panel-sides" tabindex="-1">02　選三條邊，圍得起來嗎？</button></div>
+<section id="panel-angles" role="tabpanel" aria-labelledby="tab-angles"><div class="teacher-prompt"><span>想一想</span><p>如果把三角形拉得又高又瘦，三個內角加起來會改變嗎？</p></div><div class="triangle-layout"><section class="board-card"><div class="board-heading"><h2>拖動 A、B、C 任一個點</h2><span>滑鼠／觸控都可以</span></div><svg id="angle-board" class="angle-board" viewBox="0 0 640 400" aria-label="可移動頂點的三角形"></svg><p class="board-note">也可以選取頂點，用下方滑桿或鍵盤方向鍵移動。</p><div class="point-controls"><label for="active-point">要移動的點</label><select id="active-point"><option value="0">A 點</option><option value="1">B 點</option><option value="2">C 點</option></select><label for="point-x">左右</label><input id="point-x" type="range" min="55" max="585" value="320"><label for="point-y">上下</label><input id="point-y" type="range" min="55" max="345" value="90"></div><div class="shape-presets"><button data-shape="default">重新開始</button><button data-shape="right">直角三角形</button><button data-shape="obtuse">鈍角三角形</button><button data-shape="flat">排成一直線</button></div></section>
+<aside class="readout-card"><p class="eyebrow">即時觀察</p><h2>三個內角加起來</h2><div id="angle-readout" aria-live="polite"></div><div class="learning-note"><strong>形狀會變，內角和不變。</strong><p>只要三個點不在同一直線上，就能形成三角形，三個內角和是 180°。</p></div><p class="rounding-note">各角顯示到小數第 1 位，分別四捨五入後，加總可能是 179.9° 或 180.1°；精確的內角和仍是 180°。</p></aside></div></section>
+<section id="panel-sides" role="tabpanel" aria-labelledby="tab-sides" hidden><div class="teacher-prompt"><span>先預測</span><p>從五條邊條選三條。每一組都圍得起來嗎？「剛好一樣長」算不算三角形？</p></div><div class="triangle-layout"><section class="board-card"><div class="board-heading"><h2>你的五條邊條</h2><button id="new-strips" class="small-button">↻ 隨機換一組</button></div><p class="strip-help">任選 3 條，每條只能使用一次。長度為虛擬公分，與螢幕上的實際公分不同。</p><div id="strips" class="strips"></div><p id="selection-status" role="status" aria-live="polite"></p><fieldset class="prediction"><legend>我的預測</legend><label><input type="radio" name="prediction" value="yes">可以圍成三角形</label><label><input type="radio" name="prediction" value="no">不能圍成三角形</label></fieldset><button id="build" class="primary" disabled>選好 3 條後，試著組合</button><div class="sample-row"><span>觀察特例：</span><button id="boundary-set">試試「兩邊和剛好相等」</button></div></section>
+<section class="board-card result-board"><div class="board-heading"><h2>三條邊的組合結果</h2><span>所有邊條使用相同比例</span></div><svg id="side-board" viewBox="0 0 640 360" role="img" aria-label="選好三條邊後，在這裡看組合結果"></svg><div id="side-result" aria-live="polite"><p class="awaiting">先挑 3 條邊，猜一猜，再按「試著組合」。</p></div></section></div>
+<section class="record-card"><div class="board-heading"><h2>我的組合紀錄</h2><span>每組邊條共有 10 種選法</span></div><p id="record-empty">試著找出一組可以圍成、一組不能圍成的組合。</p><div class="table-scroll"><table id="records" hidden><thead><tr><th>選取的邊長（cm）</th><th>短邊＋短邊與最長邊</th><th>能圍成嗎？</th></tr></thead><tbody></tbody></table></div></section>
+<div class="discovery"><div class="discovery-icon">✧</div><div><h2>任意兩邊的和，都要大於第三邊。</h2><p>排序後，先檢查「較短的兩邊和 ＞ 最長邊」。等於時只能排成一直線；小於時會留下缺口。</p></div></div></section>
+<details class="teaching-guide"><summary>給老師的引導建議</summary><div><p>① 先請學生預測，再操作；比較銳角、直角、鈍角三角形，並觀察三點共線的特例。</p><p>② 每次選三條邊前先猜能否圍成，再用圖與三組不等式檢查。比較「大於、等於、小於」，不要只記口訣。</p><p>③ 動態測量能幫助形成猜想，仍可搭配紙片撕角、拼成平角的活動，說明為什麼內角和是 180°。</p></div></details></main>
+<footer class="site-footer">
+  <span>小小數學所 · 把抽象的數學，變成看得見的發現。</span>
+  <span>觀察 → 預測 → 操作 → 說明</span>
+</footer>
+<script type="module" src="triangle.js"></script></body></html>

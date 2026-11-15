@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#285d48"><title>立體形體觀察室｜小小數學所</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="triangle.css"><link rel="stylesheet" href="visual-labs.css">
+<link rel="stylesheet" href="site-shell.css">
+<script src="site-shell.js" defer></script>
+</head><body data-site-layout="lesson" data-lab="solids">
+<header class="site-header">
+  <a class="site-brand" href="solids.html"><span class="site-logo" aria-hidden="true">⬡</span><span class="site-brand-name">立體形體觀察室</span><span class="site-brand-sub">數學探索室</span></a>
+  <nav class="site-nav" aria-label="頁面導覽">
+    <a href="./#grade-5">數學入口</a>
+    <a href="solids.html" aria-current="page">立體形體</a>
+    <a href="solids-quiz.html">隨機練習</a>
+    <a href="sphere.html">把球切開看</a>
+  </nav>
+  <button class="site-fullscreen" type="button" hidden><span aria-hidden="true">⛶</span> <span class="site-fullscreen-text">全螢幕</span></button>
+</header>
+<main><section class="intro"><div><h1>立體形體觀察室</h1><p class="subtitle">轉動角柱、角錐、圓柱和圓錐，比一比底面和側面。</p></div></section>
+<div class="teacher-prompt"><span>先想一想</span><p>底面多一條邊時，立體的頂點、邊和面會增加幾個？</p></div>
+<div class="triangle-layout">
+<section class="board-card lab-board"><div id="lab-modes" class="lab-controls"></div>
+<svg id="lab-drawing" class="drag-view" tabindex="0" aria-describedby="drag-hint" viewBox="0 0 600 350" role="img" aria-label="可旋轉的立體形體"></svg>
+<p id="drag-hint" class="lab-drag-hint">拖曳模型來旋轉，或選取圖形後按方向鍵。</p>
+<div id="lab-tools" class="lab-controls"></div></section>
+<aside class="readout-card"><p class="eyebrow">看圖找規律</p><div id="lab-result" aria-live="polite"></div></aside>
+</div></main>
+<footer class="site-footer">
+  <span>小小數學所 · 把抽象的數學，變成看得見的發現。</span>
+  <span>觀察 → 操作 → 說明</span>
+</footer>
+<script type="module" src="solids.js"></script></body></html>

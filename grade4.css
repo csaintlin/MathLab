@@ -1,0 +1,30 @@
+.grade4-board { min-width: 0; touch-action: none; }
+.grade4-board svg { display: block; max-width: 100%; margin: auto; }
+.grade4-board [data-tool], .grade4-board [data-ray],
+.grade4-board [data-vertex], .grade4-board [data-chart-index] { cursor: grab; }
+.grade4-grid { position: relative; width: min(100%, 440px); aspect-ratio: 1; margin: auto; }
+.grade4-grid > .grade3-tiles { position: absolute; inset: 6.03448276%; width: auto; margin: 0; grid-auto-rows: minmax(0, 1fr); gap: 0; }
+.grade4-grid button[data-tile] { min-width: 0; min-height: 0; border-radius: 0; padding: 0; aspect-ratio: auto; border-color: #8ca88c55; }
+.grade4-grid button[data-tile][aria-pressed="true"] { background: transparent !important; }
+.grade4-grid > svg { width: 100%; height: 100%; max-height: none; }
+.grade4-saved { text-align: center; }
+.grade4-saved svg { width: min(100%, 300px); }
+.grade4-table { width: 100%; border-collapse: collapse; text-align: left; }
+.grade4-table th, .grade4-table td { padding: .35em .5em; border-bottom: 1px solid #d1e1d3; }
+.grade4-quiz-actions { margin-block: .5rem; }
+.grade4-trace { stroke-dasharray: 1; animation: grade4-trace 1.6s linear both; }
+@keyframes grade4-trace { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .grade4-trace { animation: none; } }
+.grade4-grid button[data-tile]:not([aria-pressed="true"]) { background: transparent; }
+.grade4-grid button[data-tile]:focus-visible { outline: 2px solid #a66920; z-index: 1; }
+body[data-grade4="angle"] .grade4-board,
+body[data-quiz="g4-angle"] .quiz-draggable { user-select: none; -webkit-user-select: none; }
+.grade4-board [data-rotation] { cursor: grab; }
+.grade4-board [data-rotation]:focus-visible { outline: 2px solid #a66920; }
+.grade4-zero { display: flex; flex-wrap: wrap; gap: 1rem; border: 1px solid #c1d5c6; border-radius: 9px; }
+.grade4-zero label { display: inline-flex; min-height: 44px; align-items: center; gap: .35rem; }
+body[data-grade4="triangle"] .grade4-board { user-select: none; }
+.grade4-edge-label text { fill: var(--edge-color); paint-order: stroke; stroke: #fffefa; stroke-width: 2px; }
+.grade4-board [data-vertex]:focus-visible { outline: 2px solid #a66920; }
+.grade4-area-step { flex-basis: 100%; margin: .4rem 0 0; font-weight: 700; }
+.grade4-area-value { color: #8a4b1c; font-size: 1.35em; }
