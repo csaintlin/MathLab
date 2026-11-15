@@ -1,0 +1,9 @@
+.lab-quiz-visual svg,.choice-list label>span svg{display:block;width:100%;height:auto;max-height:170px}
+.choice-list label>span:has(svg){flex:1;min-width:0}
+.choice-list label>span svg{max-height:90px}
+.choice-list label:has(input:checked){border-color:#468066;background:#edf5ea}
+.quiz-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;text-align:center}
+.quiz-range{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:12px 0;color:#48634f;font-size:13px}
+.quiz-range input{accent-color:#28624e;max-width:100%}
+
+.quiz-draggable{cursor:ew-resize;touch-action:none;user-select:none}

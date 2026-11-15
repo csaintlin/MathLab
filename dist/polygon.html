@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#285d48">
+<title>多邊形切三角形｜小小數學所</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="triangle.css">
+<link rel="stylesheet" href="polygon.css">
+<link rel="stylesheet" href="site-shell.css">
+<script src="site-shell.js" defer></script>
+</head>
+<body data-site-layout="lesson">
+<header class="site-header">
+  <a class="site-brand" href="polygon.html"><span class="site-logo" aria-hidden="true">⬠</span><span class="site-brand-name">多邊形探索室</span><span class="site-brand-sub">數學探索室</span></a>
+  <nav class="site-nav" aria-label="頁面導覽">
+    <a href="./#grade-5">數學入口</a>
+    <a href="polygon.html" aria-current="page">多邊形實驗</a>
+    <a href="triangle.html">三角形探索室</a>
+  </nav>
+  <button class="site-fullscreen" type="button" hidden><span aria-hidden="true">⛶</span> <span class="site-fullscreen-text">全螢幕</span></button>
+</header>
+<main>
+  <section class="intro"><div>
+    <h1>多邊形裡，<span>藏著幾個三角形？</span></h1>
+    <p class="subtitle">從同一個頂點畫對角線，把整個圖形切成三角形。</p>
+  </div></section>
+  <div class="teacher-prompt"><span>先猜一猜</span><p>四邊形能切成幾個三角形？多一條邊時，會多出幾個三角形？</p></div>
+  <div class="triangle-layout">
+    <section class="board-card">
+      <div class="polygon-toolbar">
+        <label>邊數 <select id="sides"><option value="3">3 · 三角形</option><option value="4" selected>4 · 四邊形</option><option value="5">5 · 五邊形</option><option value="6">6 · 六邊形</option><option value="7">7 · 七邊形</option><option value="8">8 · 八邊形</option></select></label>
+        <label><input type="checkbox" id="regular"> 改用正多邊形</label>
+      </div>
+      <svg id="polygon-board" viewBox="0 0 500 365" role="group" aria-label="可點選頂點的多邊形">
+        <g id="pieces" aria-hidden="true"></g>
+        <g id="vertices"></g>
+      </svg>
+      <p id="instruction" role="status"></p>
+      <div class="polygon-toolbar">
+        <button id="reselect" class="small-button">重選起點</button>
+        <button id="undo" class="small-button">收回上一刀</button>
+      </div>
+    </section>
+    <aside class="readout-card">
+      <p class="eyebrow">觀察紀錄</p>
+      <h2>每個三角形的內角和是 180°</h2>
+      <div id="result" aria-live="polite"></div>
+      <p class="polygon-note">切開後，原本的角可能分成幾小塊。這些小角剛好組成每片三角形的角，所以把每片的 180° 加起來，就是原圖的內角和。</p>
+      <a href="triangle.html">回顧三角形的內角和 →</a>
+    </aside>
+  </div>
+  <details class="teaching-guide"><summary>切完後，試著找規律</summary>
+    <p>從起點往外看，原圖有兩條邊接著起點。沿著其餘每條邊往回連到起點，都剛好形成一個三角形。</p>
+    <p>所以凸多邊形可切出的三角形數量是「邊數 − 2」，內角和就是「（邊數 − 2）× 180°」。</p>
+    <p>換一個起點，或改用邊一樣長、角一樣大的正多邊形，看看三角形片數和內角和會不會變。</p>
+  </details>
+  </main>
+<footer class="site-footer">
+  <span>小小數學所 · 把抽象的數學，變成看得見的發現。</span>
+  <span>觀察 → 預測 → 操作 → 說明</span>
+</footer>
+<script src="polygon.js" defer></script>
+</body>
+</html>

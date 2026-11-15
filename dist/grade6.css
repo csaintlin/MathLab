@@ -1,0 +1,25 @@
+body[data-grade4^="g6-"] .grade4-board { touch-action: auto; }
+body[data-grade4^="g6-"] .grade3-control-row { flex-basis: 100%; }
+body[data-grade4^="g6-"] .lab-controls button { max-width: 100%; }
+body[data-quiz^="g6-"] .lab-quiz-visual svg { display: block; width: 100%; max-height: 235px; }
+.g6-block-row { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.g6-block { display: inline-block; width: .95rem; height: .95rem; }
+.g6-block-group { padding: .35rem; border: 1px solid #9bb5a2; border-radius: .4rem; }
+.g6-block-group > div { display: flex; flex-wrap: wrap; gap: .2rem; max-width: 8rem; }
+.g6-block-group-short { border: 2px solid #a6443a; color: #8b3128; }
+.g6-block-empty { box-sizing: border-box; border: 1px dashed #a6443a; }
+.g6-factor-warning { width: fit-content; padding: .35rem .65rem; border-radius: .4rem; background: #f8e4df; color: #8b3128; }
+.g6-ratio-value {
+  display: inline-block;
+  padding: .1em .45em;
+  border-radius: .4rem;
+  background: #dcebdd;
+  color: #245640;
+  font-size: 1.45em;
+  font-weight: 750;
+}
+#g6-perimeter-modes { margin-block: 0 1rem; }
+body[data-grade4="g6-perimeter"] #g4-controls label { display: inline-grid; gap: .25rem; }
+body[data-grade4="g6-perimeter"] #g4-controls select { min-height: 44px; font: inherit; }
+body[data-grade4="g6-perimeter"] #g4-controls details { flex-basis: 100%; }
+.g6-edge-hit { cursor: pointer; }

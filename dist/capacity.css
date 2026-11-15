@@ -1,0 +1,30 @@
+.capacity-lesson .toolbar { justify-content: flex-end; }
+.containers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.vessel-card { min-width: 0; background: #f7f9f3; border: 1px solid #dce5d4; border-radius: 15px; padding: 12px 8px; text-align: center; }
+.vessel-card h3 { font-size: 16px; margin: 5px 0; }
+.vessel-card svg { max-width: 165px; overflow: visible; }
+.cup-actions { display: grid; gap: 6px; max-width: 165px; margin: 4px auto 0; }
+.cup-actions button { font-size: 14px; padding: 8px 4px; }
+.vessel-card.pouring svg { animation: pour .85s ease-in-out; }
+.vessel-card.empty .water { opacity: 0; }
+.badge { display: inline-block; background: #dfead6; color: #4d7047; padding: 6px 10px; border-radius: 20px; font-size: 13px; }
+.highest-cup { border-color: #527644; box-shadow: inset 0 0 0 1px #527644; }
+.capacity-lesson #conclusion { line-height: 1.7; margin-bottom: 0; }
+@keyframes pour { 0%, 100% { transform: rotate(0); } 45%, 70% { transform: rotate(22deg); } }
+@media (max-width: 650px) {
+  .capacity-lesson { padding-inline: 12px; }
+  .capacity-lesson section { padding: 16px 10px; }
+  .containers { gap: 6px; }
+  .vessel-card { padding-inline: 3px; }
+  .vessel-card h3, .cup-actions button, .badge { font-size: 12px; }
+  .badge { padding-inline: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { .vessel-card.pouring svg { animation: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .vessel-card.filling .water {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: fill-cup .85s ease-out both;
+  }
+}
+@keyframes fill-cup { from { transform: scaleY(0); } to { transform: scaleY(1); } }

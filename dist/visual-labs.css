@@ -1,0 +1,49 @@
+.lab-controls{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.lab-controls button,.lab-controls select{border:1px solid #c9d9c9;border-radius:9px;background:#f9fcf7;color:#294f40;padding:8px 12px;min-height:44px;font:inherit}
+.lab-controls button[aria-pressed=true]{background:#28624e;border-color:#28624e;color:white}
+.lab-controls button:disabled{opacity:.52;cursor:default}
+.lab-controls label{display:inline-flex;align-items:center;gap:7px;font-size:14px}
+.lab-controls input[type=range]{width:115px;accent-color:#28624e}
+#lab-drawing{display:block;width:100%;height:auto;max-height:450px;margin:13px 0;background:#f5f9f1 radial-gradient(#a6bca45e 1px,transparent 1px);background-size:17px 17px;border-radius:12px}
+#lab-drawing text{font:600 19px "Microsoft JhengHei",sans-serif;fill:#243e35;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+#lab-drawing .lab-small{font-size:15px}
+#lab-drawing .lab-target{cursor:pointer;outline:none}
+#lab-drawing .lab-target:focus-visible{stroke:#936b21;stroke-width:5}
+#lab-result{line-height:1.75}
+#lab-result h2{font-size:18px;margin:0 0 12px}
+#lab-result p{margin:10px 0}
+.lab-equation{padding:10px 14px;border-radius:9px;background:#edf4e8;color:#285a48;font-size:clamp(16px,2.2vw,23px);font-weight:700}
+.lab-key{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px}
+@media(max-width:500px){.lab-controls button,.lab-controls select{font-size:13px;padding:7px 9px}.lab-board{padding:12px}.lab-controls input[type=range]{width:90px}}
+
+#lab-drawing.drag-view{cursor:grab;touch-action:none;user-select:none}
+#lab-drawing.drag-view.is-dragging{cursor:grabbing}
+#lab-drawing.drag-view:focus-visible{outline:3px solid #9b6c20;outline-offset:3px}
+.lab-drag-hint{margin:0 0 12px;color:#48634f;font-size:13px;line-height:1.5}
+
+.area-stage {
+  margin-top: 13px;
+  border-radius: 12px;
+  background: #f5f9f1 radial-gradient(#a6bca45e 1px, transparent 1px);
+  background-size: 17px 17px;
+}
+.area-stage #lab-drawing { margin: 0; background: none; }
+.area-stage-top, .area-stage-bottom { padding: 10px; }
+.area-stage-top { justify-content: flex-end; }
+.area-stage-top button {
+  background: #28624e;
+  border-color: #28624e;
+  color: white;
+}
+.area-stage-bottom label {
+  min-height: 44px;
+  padding: 0 9px;
+  border-radius: 9px;
+  background: #f9fcf7;
+}
+.area-stage button span[aria-hidden] { font-size: 1.2em; margin-right: 3px; }
+
+#lab-drawing .area-copy-label text { fill: #945421; }
+
+#lab-drawing.mirror-board { touch-action:none; cursor:crosshair; user-select:none; }
+#lab-drawing .mirror-handle { cursor:ew-resize; }

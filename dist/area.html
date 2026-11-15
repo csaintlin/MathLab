@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#285d48"><title>面積剪拼實驗室｜小小數學所</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="triangle.css"><link rel="stylesheet" href="visual-labs.css">
+<link rel="stylesheet" href="site-shell.css">
+<script src="site-shell.js" defer></script>
+</head><body data-site-layout="lesson" data-lab="area">
+<header class="site-header">
+  <a class="site-brand" href="area.html"><span class="site-logo" aria-hidden="true">▱</span><span class="site-brand-name">面積剪拼實驗室</span><span class="site-brand-sub">數學探索室</span></a>
+  <nav class="site-nav" aria-label="頁面導覽">
+    <a href="./#grade-5">數學入口</a>
+    <a href="area.html" aria-current="page">面積剪拼</a>
+    <a href="area-quiz.html">隨機練習</a>
+  </nav>
+  <button class="site-fullscreen" type="button" hidden><span aria-hidden="true">⛶</span> <span class="site-fullscreen-text">全螢幕</span></button>
+</header>
+<main><section class="intro"><div><h1>面積剪拼實驗室</h1><p class="subtitle">剪開再拼起來，從圖形看懂面積公式。</p></div></section>
+<div class="teacher-prompt"><span>先想一想</span><p>把圖形拉斜一點，底和高不變時，面積會變嗎？</p></div>
+<div class="triangle-layout">
+<section class="board-card lab-board"><div id="lab-modes" class="lab-controls"></div>
+<div class="area-stage">
+  <div class="area-stage-top lab-controls">
+    <button id="area-next" type="button"><span aria-hidden="true">✂</span> <span>沿著高剪開</span></button>
+  </div>
+  <svg id="lab-drawing" viewBox="0 0 600 350" role="img" aria-label="平面圖形面積操作圖"></svg>
+  <div class="area-stage-bottom lab-controls">
+    <button id="area-reset" type="button"><span aria-hidden="true">↺</span> 重來</button>
+    <div id="lab-tools" class="lab-controls"></div>
+  </div>
+</div></section>
+<aside class="readout-card"><p class="eyebrow">看圖找規律</p><div id="lab-result" aria-live="polite"></div></aside>
+</div></main>
+<footer class="site-footer">
+  <span>小小數學所 · 把抽象的數學，變成看得見的發現。</span>
+  <span>觀察 → 操作 → 說明</span>
+</footer>
+<script type="module" src="area.js"></script></body></html>

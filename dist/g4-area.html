@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#285d48"><title>方格圍籬實驗室｜小小數學所</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="triangle.css"><link rel="stylesheet" href="visual-labs.css"><link rel="stylesheet" href="grade3.css">
+<link rel="stylesheet" href="site-shell.css">
+<script src="site-shell.js" defer></script>
+<link rel="stylesheet" href="grade4.css">
+</head><body data-site-layout="lesson" data-grade4="area">
+<header class="site-header">
+  <a class="site-brand" href="g4-area.html"><span class="site-logo" aria-hidden="true">▦</span><span class="site-brand-name">方格圍籬實驗室</span><span class="site-brand-sub">數學探索室</span></a>
+  <nav class="site-nav" aria-label="頁面導覽">
+    <a href="./#grade-4">數學入口</a>
+    <a href="g4-area.html" aria-current="page">動手探索</a>
+    <a href="g4-area-quiz.html">隨機練習</a>
+  </nav>
+  <button class="site-fullscreen" type="button" hidden><span aria-hidden="true">⛶</span> <span class="site-fullscreen-text">全螢幕</span></button>
+</header>
+<main>
+  <section class="intro"><div><h1>方格圍籬實驗室</h1><p class="subtitle">拼方格、數外框，比較面積和周長。</p></div></section>
+  <section class="triangle-layout grade3-layout" aria-label="方格圍籬實驗室">
+    <div class="board-card grade3-board grade4-board" id="g4-board"></div>
+    <div class="readout-card">
+      <div id="g4-controls" class="lab-controls grade3-controls"></div>
+      <div id="g4-result" class="grade3-result" role="status"></div>
+      <div class="lab-controls grade3-controls">
+        <button id="g4-reset" type="button">↺ 重設</button>
+        <button id="g4-new" type="button">換一題</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <span>小小數學所 · 把抽象的數學，變成看得見的發現。</span>
+  <span>先動手，再說說看。</span>
+</footer>
+<script type="module" src="grade4-lab.js"></script></body></html>

@@ -1,0 +1,113 @@
+.grade3-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.grade3-board {
+  min-width: 0;
+  padding: 16px;
+  background: #f5f9f1;
+  border-radius: 12px;
+}
+.grade3-board svg, body[data-quiz^="g3-"] .lab-quiz-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.grade3-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: center; }
+.grade3-pair p { margin: 4px 0; font-size: 14px; }
+.grade3-draggable { touch-action: none; cursor: grab; }
+.grade3-draggable:active { cursor: grabbing; }
+.grade3-detail { margin-top: 15px; text-align: center; }
+.grade3-detail p { margin: 4px 0; }
+.grade3-controls, .grade3-control-buttons { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.grade3-controls button, .grade3-control-buttons button,
+.grade3-point-board button, .grade3-tiles button { min-height: 44px; }
+.grade3-controls form { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+.grade3-controls label, .grade3-answer-fields label { display: grid; gap: 4px; }
+.grade3-controls input, .grade3-answer-fields input {
+  width: 95px;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #a9bfa8;
+  border-radius: 8px;
+  background: white;
+  font: inherit;
+}
+.grade3-result { min-height: 3em; line-height: 1.65; margin: 16px 0; }
+.grade3-result p { margin: 4px 0 0; }
+.grade3-tiles {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  width: min(100%, 416px);
+  margin-inline: auto;
+  gap: 2px;
+}
+.grade3-tiles button {
+  padding: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  border: 1px solid #8ca88c;
+  border-radius: 3px;
+  background: white;
+}
+.grade3-tiles button[aria-pressed="true"] { background: #6d9c7c !important; }
+.grade3-strip { text-align: center; margin: 8px 0 16px; }
+.grade3-strip .grade3-tiles, body[data-quiz="g3-fractions"] .grade3-tiles { gap: 0; }
+.grade3-strip .grade3-tiles button, body[data-quiz="g3-fractions"] .grade3-tiles button {
+  min-height: 48px;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.grade3-fraction { display: inline-grid; text-align: center; vertical-align: middle; padding: 3px 6px; font-weight: 700; }
+.grade3-fraction span:first-child { border-bottom: 1px solid currentColor; }
+.grade3-answer-fields { display: flex; flex-wrap: wrap; gap: 10px; }
+.grade3-point-board { position: relative; width: 100%; }
+.grade3-point-board button {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  border: 1px solid #8ca88c;
+  border-radius: 50%;
+  background: #fffdf5;
+}
+.grade3-point-board button[aria-pressed="true"] { background: #285d48; color: white; }
+.grade3-water { transform-box: fill-box; transform-origin: center bottom; }
+@media (prefers-reduced-motion: no-preference) {
+  .grade3-filling .grade3-water { animation: grade3-fill .45s ease-out; }
+  .grade3-filling .grade3-stream { animation: grade3-stream .45s ease-out both; }
+}
+@keyframes grade3-fill { from { transform: scaleY(var(--previous-fill, 0)); } to { transform: scaleY(1); } }
+@keyframes grade3-stream { 0%, 95% { opacity: .9; } 100% { opacity: 0; } }
+body[data-quiz^="g3-"] .lab-quiz-visual { min-width: 0; }
+body[data-quiz^="g3-"] .question { min-width: 0; }
+@media (max-width: 780px) { .grade3-layout { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 450px) {
+  .grade3-board { padding: 8px; }
+  .grade3-tiles { gap: 1px; }
+}
+.grade3-question { flex-basis: 100%; margin: 6px 0 0; }
+.grade3-point-board { max-width: 340px; margin: auto; }
+body[data-quiz^="g3-"] .lab-quiz-visual .grade3-pair svg { max-height: none; }
+
+.grade3-angle-result {
+  display: block;
+  color: #285d48;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+.grade3-angle-name {
+  display: block;
+  color: #285d48;
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.grade3-control-row { flex-basis: 100%; }
+
+.grade3-lens-open > svg [data-ruler-scale] { cursor: crosshair; }
+.grade3-lens-open .grade3-detail svg { display: block; width: min(100%, 18rem); margin: 0 auto; }
